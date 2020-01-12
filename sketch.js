@@ -33,7 +33,7 @@ function draw() {
 
   const pulse = sin(frameCount / 20) * 50
   fill(sin(frameCount/60) * 30 + 30, 100, 100)
-  ellipse(cx, cy, 100 + abs(rotationX*20) + pulse, 100 + abs(rotationX*20) + pulse)
+  ellipse(cx, cy, 50 + abs(rotationX*20) + pulse, 50 + abs(rotationX*20) + pulse)
 }
 
 function deviceShaken() {
