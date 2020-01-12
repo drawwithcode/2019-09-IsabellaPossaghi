@@ -1,5 +1,8 @@
 var value = 0;
 
+//ball
+let cx, cy
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
   angleMode(DEGREES);
@@ -7,6 +10,10 @@ function setup() {
   // by defaults equals to 30
   setShakeThreshold(10);
   frameRate(12);
+
+  //ball
+  cx = width / 2
+  cy = height / 2
 }
 
 function draw() {
@@ -15,6 +22,18 @@ function draw() {
   textSize(90);
   textAlign(CENTER);
   text(value,width/2,height/2+30)
+
+  //ball
+  cx += map(rotationY, -90, 90, -100, 100)
+  cy += map(rotationX, -90, 90, -100, 100)
+  if (cx >= width) cx = 0
+  else if (cx <= 0) cx = width
+  if (cy >= height) cy = 0
+  else if (cy <= 0) cy = height
+
+  const pulse = sin(frameCount / 20) * 50
+  fill(sin(frameCount/60) * 30 + 30, 100, 100)
+  ellipse(cx, cy, 100 + abs(rotationX*20) + pulse, 100 + abs(rotationX*20) + pulse)
 }
 
 function deviceShaken() {
