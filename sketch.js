@@ -39,7 +39,7 @@ function draw() {
 
 function deviceShaken() {
   value = value + 1;
-  if (value > 147, 112, 219) {
+  if (value > 255) {
     value = 0;
   }
 }
