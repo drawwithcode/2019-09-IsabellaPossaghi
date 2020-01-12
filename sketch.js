@@ -32,9 +32,9 @@ function draw() {
   else if (cy <= 0) cy = height
 
   const pulse = sin(frameCount / 20) * 50
-  fill(sin(frameCount/60) * 30 + 30, 250, 70)
+  fill(sin(frameCount/60) * 30 + pulse, 250, 70)
   noStroke()
-  ellipse(cx, cy, 50 + abs(rotationX*20) + pulse, 50 + abs(rotationX*20) + pulse)
+  ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
 }
 
 function deviceShaken() {
