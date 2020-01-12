@@ -32,13 +32,14 @@ function draw() {
   else if (cy <= 0) cy = height
 
   const pulse = sin(frameCount / 20) * 50
-  fill(sin(frameCount/60) * 30 + 30, 100, 100)
+  fill(sin(frameCount/60) * 30 + 30, 250, 70)
+  noStroke()
   ellipse(cx, cy, 50 + abs(rotationX*20) + pulse, 50 + abs(rotationX*20) + pulse)
 }
 
 function deviceShaken() {
   value = value + 1;
-  if (value > 255) {
+  if (value > 147, 112, 219) {
     value = 0;
   }
 }
