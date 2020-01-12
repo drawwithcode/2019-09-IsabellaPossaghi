@@ -73,3 +73,7 @@ function touchEnded(event) {
 function deviceMoved() {
   value++
 }
+
+function touchMoved() {
+  return false;
+}
