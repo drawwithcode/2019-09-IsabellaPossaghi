@@ -18,7 +18,7 @@ function setup() {
 
 function draw() {
   background(value);
-  fill(255-value);
+  fill(255, 50, 70 - value); //fill(255 - value);
   textSize(90);
   textAlign(CENTER);
   text(value,width/2,height/2+30)
@@ -32,10 +32,31 @@ function draw() {
   else if (cy <= 0) cy = height
 
   const pulse = sin(frameCount / 20) * 50
-  fill(50, 250, 70)
-  noStroke()
-  ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
+
+
+
+  //touches
+  if (touches.length==0) {
+    fill(50, 250, 70)
+    noStroke()
+    ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
+  } else {
+    fill(50, 250, 70)
+    strokeWeight(8)
+    ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
+
+  }
+
 }
+
+//touches
+if (touches.length==0) {
+
+}
+
+
+
+
 
 function deviceShaken() {
   value = value + 1;
