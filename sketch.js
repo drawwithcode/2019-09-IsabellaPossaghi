@@ -1,4 +1,5 @@
 var value = 0;
+var colors = ["#bcbbe5", "#467f16", "#e776b5", "#85ddce", "#efb865"]
 
 //ball
 let cx, cy
@@ -34,6 +35,13 @@ function draw() {
   const pulse = sin(frameCount / 20) * 50
 
 
+  for (var i = 0; i < touches.length; i++) {
+   // One color per finger
+   fill(colors[i]);
+   // Draw a circle at each finger
+   rect(touches[i].x, touches[i].y, 100, 100);
+ }
+
 
   //touches
   if (touches.length==0) {
@@ -49,14 +57,6 @@ function draw() {
   }
 
 }
-
-//touches
-if (touches.length==0) {
-
-}
-
-
-
 
 
 function deviceShaken() {
