@@ -43,6 +43,7 @@ function draw() {
   } else {
     fill(50, 250, 70)
     strokeWeight(8)
+    stroke("peachpuff")
     ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
 
   }
