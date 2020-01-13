@@ -25,10 +25,6 @@ function setup() {
   cx = width / 2
   cy = height / 2
 
-  // a reindeer appears when you touch the screen
-  for (var i = 0; i < touches.length; i++) {
-    image(deer, touches[i].x, touches[i].y, 100, 100)
-  }
 
 
 }
@@ -62,6 +58,11 @@ function draw() {
   else if (cy <= 0) cy = height
 
   let pulse = sin(frameCount / 20) * 50
+
+  // a reindeer appears when you touch the screen
+  for (var i = 0; i < touches.length; i++) {
+    image(deer, touches[i].x, touches[i].y, 100, 100)
+  }
 
 
 
