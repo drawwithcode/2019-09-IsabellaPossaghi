@@ -34,12 +34,14 @@ function draw() {
   image(tree,width/2, 1100, windowWidth, 800 )
   background(255, 255-value/2);
 
-  fill(255 - value);
+  fill(0 + value);
   //textSize(150 - value);
   textSize(50);
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
-  text("a lucky snowflake", width/2,height/2+30)
+  textFont("VT323");
+  text("move your device to control the snowflake", width/2,100)
+  text("tap to make a reindeer appear", width/2,140)
 
 
 
