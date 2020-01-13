@@ -77,11 +77,11 @@ function draw() {
 
   //vediamo se funziona
   if (cy > windowHeight || cy < 0) {
-      pulse = -pulse;
+      pulse = 0;
     }
 
     if (cx < 0 || cx > windowWidth) {
-      pulse = -pulse;
+      pulse = 0;
     }
 
 
