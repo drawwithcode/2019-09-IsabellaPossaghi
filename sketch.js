@@ -9,6 +9,7 @@ function preload() {
   snow_2 = loadImage("./assets/snow_2.png");
   clouds = loadImage("./assets/clouds.png");
   tree = loadImage("./assets/tree.png")
+  deer = loadImage("./assets/deer.png")
 }
 
 function setup() {
@@ -27,15 +28,15 @@ function setup() {
 }
 
 function draw() {
-  
+
   //background images
   image(clouds, width/2,100, 800, 600)
   image(tree,width/2, 1030, windowWidth, 800 )
   background(255, 255-value);
 
   fill(255 - value);
-  textSize(150 - value);
-  //textSize(50);
+  //textSize(150 - value);
+  textSize(50);
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
   text("a lucky snowflake", width/2,height/2+30)
@@ -55,9 +56,10 @@ function draw() {
 
   for (var i = 0; i < touches.length; i++) {
    // One color per finger
-   fill(colors[i]);
-   // Draw a circle at each finger
-   rect(touches[i].x, touches[i].y, 100, 100);
+   //fill(colors[i]);
+   //rect(touches[i].x, touches[i].y, 100, 100);
+   image(deer,touches[i].x, touches[i].y, 100, 100)
+
  }
 
 
@@ -71,8 +73,6 @@ function draw() {
   } else {
 
     fill(50, 250, 70)
-    strokeWeight(8)
-    stroke("peachpuff")
     //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
     image(snow_2, cx, cy, 150 + abs(rotationX*5) + pulse, 150 + abs(rotationX*5) + pulse)
 
