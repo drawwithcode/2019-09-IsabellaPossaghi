@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
   background(value);
-  fill(255, 50, 70 - value); //fill(255 - value);
+  fill("plum" - value); //fill(255 - value);
   textSize(90);
   textAlign(CENTER);
   text(value,width/2,height/2+30)
