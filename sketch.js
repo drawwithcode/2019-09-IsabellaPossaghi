@@ -61,7 +61,7 @@ function draw() {
 
   // a reindeer appears when you touch the screen
   for (var i = 0; i < touches.length; i++) {
-    image(deer, touches[i].x, touches[i].y, 100 + pulse, 100 + pulse)
+    image(deer, touches[i].x, touches[i].y, 10 + abs(rotationX * 5) + pulse, 10 + abs(rotationX * 5) + pulse)
   }
 
 
@@ -74,18 +74,6 @@ function draw() {
   } else {
     image(snow_3, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
   }
-
-  //vediamo se funziona
-  if (cy > windowHeight || cy < 0) {
-      pulse = 0;
-    }
-
-    if (cx < 0 || cx > windowWidth) {
-      pulse = 0;
-    }
-
-
-
 
 }
 
