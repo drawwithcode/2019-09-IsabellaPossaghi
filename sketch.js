@@ -15,7 +15,7 @@ function setup() {
   angleMode(DEGREES);
   imageMode(CENTER)
 
-  setShakeThreshold(70); // by defaults equals to 30, a little more sensitive
+  setShakeThreshold(40); // by defaults equals to 30, a little more sensitive
   frameRate(12);
 
   //ball
@@ -29,7 +29,8 @@ function draw() {
   background(value);
   image(clouds, width/2,100, 500, 300)
   fill(255 - value);
-  textSize(150 - value);
+  //textSize(150 - value);
+  textSize(50);
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
   text("a lucky snowflake", width/2,height/2+30)
