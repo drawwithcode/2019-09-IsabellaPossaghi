@@ -7,12 +7,13 @@ let cx, cy
 function preload() {
   snow_1 = loadImage("./assets/snow_1.png");
   snow_2 = loadImage("./assets/snow_2.png");
-  pum = loadImage("./assets/pumpkin.png")
+  clouds = loadImage("./assets/clouds.png")
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
   angleMode(DEGREES);
+  imageMode(CENTER)
 
   setShakeThreshold(20); // by defaults equals to 30, a little more sensitive
   frameRate(12);
@@ -25,8 +26,8 @@ function setup() {
 }
 
 function draw() {
-
   background(value);
+  image(clouds, width/2,100, 500, 300)
   fill(255 - value);
   textSize(150 - value);
   textAlign(CENTER);
