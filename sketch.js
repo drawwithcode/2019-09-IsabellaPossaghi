@@ -36,7 +36,7 @@ function draw() {
 
   //fill(0 + value);
   //textSize(150 - value);
-  fill(0)
+  fill(value,240, 255)
   textSize(50);
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
