@@ -25,6 +25,11 @@ function setup() {
   cx = width / 2
   cy = height / 2
 
+  // a reindeer appears when you touch the screen
+  for (var i = 0; i < touches.length; i++) {
+    image(deer, touches[i].x, touches[i].y, 100, 100)
+  }
+
 
 }
 
@@ -33,11 +38,12 @@ function draw() {
   //background images
   image(clouds, width / 2, 100, 800, 600)
   image(tree, width / 2, 1100, windowWidth, 800)
+
   background(230, 240, 255, 255 - value2 / 2);
 
   //fill(0 + value);
   //textSize(150 - value);
-  fill(value,240, 255)
+  fill(230, value, 255, 255)
   textSize(50);
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
@@ -58,12 +64,6 @@ function draw() {
   let pulse = sin(frameCount / 20) * 50
 
 
-  // a reindeer appears when you touch the screen
-  for (var i = 0; i < touches.length; i++) {
-
-    image(deer, touches[i].x, touches[i].y, 100, 100)
-
-  }
 
 
   // the snowflake changes when you touch the screen
@@ -73,6 +73,10 @@ function draw() {
   } else {
     image(snow_3, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
   }
+
+
+
+
 }
 
 
