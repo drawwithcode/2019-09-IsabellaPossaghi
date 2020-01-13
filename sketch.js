@@ -27,6 +27,8 @@ function setup() {
 }
 
 function draw() {
+  
+  //background images
   image(clouds, width/2,100, 800, 600)
   image(tree,width/2, 1030, windowWidth, 800 )
   background(255, 255-value);
