@@ -1,5 +1,5 @@
 var value = 0;
-var colors = ["#bcbbe5", "#467f16", "#e776b5", "#85ddce", "#efb865"]
+
 
 //ball
 let cx, cy
@@ -13,7 +13,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   imageMode(CENTER)
 
@@ -30,9 +30,9 @@ function setup() {
 function draw() {
 
   //background images
-  image(clouds, width/2,100, 800, 600)
-  image(tree,width/2, 1100, windowWidth, 800 )
-  background(255, 255-value/2);
+  image(clouds, width / 2, 100, 800, 600)
+  image(tree, width / 2, 1100, windowWidth, 800)
+  background(255, 255 - value / 2);
 
   fill(0 + value);
   //textSize(150 - value);
@@ -40,8 +40,8 @@ function draw() {
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
   textFont("VT323");
-  text("move your device to control the snowflake", width/2,100)
-  text("tap to make a reindeer appear", width/2,140)
+  text("move your device to control the snowflake", width / 2, 100)
+  text("tap to make a reindeer appear", width / 2, 140)
 
 
 
@@ -56,28 +56,20 @@ function draw() {
   let pulse = sin(frameCount / 20) * 50
 
 
+  // a reindeer appears when you touch the screen
   for (var i = 0; i < touches.length; i++) {
 
-   //fill(colors[i]);
-   //rect(touches[i].x, touches[i].y, 100, 100);
-   image(deer,touches[i].x, touches[i].y, 100, 100)
+    image(deer, touches[i].x, touches[i].y, 100, 100)
 
- }
+  }
 
 
-  //touches
-  if (touches.length==0) {
-    fill(50, 250, 70)
-    noStroke()
-    //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse) //with abs() the number is always positive
-    image(snow_1, cx, cy, 20 + abs(rotationX*5) + pulse, 20 + abs(rotationX*5) + pulse)
-
+  // the snowflake changes when you touch the screen
+  if (touches.length == 0) {
+    //with abs() the number is always positive
+    image(snow_1, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
   } else {
-
-    fill(50, 250, 70)
-    //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
-    image(snow_3, cx, cy, 20 + abs(rotationX*5) + pulse, 20 + abs(rotationX*5) + pulse)
-
+    image(snow_3, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
   }
 }
 
