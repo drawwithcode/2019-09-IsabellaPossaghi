@@ -7,7 +7,8 @@ let cx, cy
 function preload() {
   snow_1 = loadImage("./assets/snow_1.png");
   snow_2 = loadImage("./assets/snow_2.png");
-  clouds = loadImage("./assets/clouds.png")
+  clouds = loadImage("./assets/clouds.png");
+  tree = loadImage("./assets/tree.png")
 }
 
 function setup() {
@@ -26,8 +27,10 @@ function setup() {
 }
 
 function draw() {
-  background(value);
-  image(clouds, width/2,100, 500, 300)
+  image(clouds, width/2,100, 800, 600)
+  image(tree,width/2, 1030, windowWidth, 800 )
+  background(255, 255-value);
+
   fill(255 - value);
   textSize(150 - value);
   //textSize(50);
