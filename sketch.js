@@ -15,7 +15,7 @@ function setup() {
   angleMode(DEGREES);
   imageMode(CENTER)
 
-  setShakeThreshold(20); // by defaults equals to 30, a little more sensitive
+  setShakeThreshold(70); // by defaults equals to 30, a little more sensitive
   frameRate(12);
 
   //ball
