@@ -48,8 +48,7 @@ function draw() {
   text("tap to make a reindeer appear", width / 2, 140)
 
 
-
-  //ball
+  //snowflake position
   cx += map(rotationY, -90, 90, -100, 100)
   cy += map(rotationX, -90, 90, -100, 100)
   if (cx >= width) cx = 0
@@ -57,11 +56,12 @@ function draw() {
   if (cy >= height) cy = 0
   else if (cy <= 0) cy = height
 
+
   let pulse = sin(frameCount / 20) * 50
 
   // a reindeer appears when you touch the screen
   for (var i = 0; i < touches.length; i++) {
-    image(deer, touches[i].x, touches[i].y, 100, 100)
+    image(deer, touches[i].x, touches[i].y, 100 + pulse, 100 + pulse)
   }
 
 
