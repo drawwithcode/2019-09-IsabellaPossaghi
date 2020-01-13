@@ -32,7 +32,7 @@ function draw() {
   if (cy >= height) cy = 0
   else if (cy <= 0) cy = height
 
-  const pulse = sin(frameCount / 20) * 50
+  let pulse = sin(frameCount / 20) * 50
 
 
   for (var i = 0; i < touches.length; i++) {
@@ -47,15 +47,19 @@ function draw() {
   if (touches.length==0) {
     fill(50, 250, 70)
     noStroke()
+    ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse) //with abs() the number is always positive
+    //experiment
+    if (rotationX > 30) {
+      rect(cx, cy, 20, 20)
+    } else {
     ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
+    }
   } else {
     fill(50, 250, 70)
     strokeWeight(8)
     stroke("peachpuff")
     ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
-
   }
-
 }
 
 
