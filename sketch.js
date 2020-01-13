@@ -26,8 +26,7 @@ function setup() {
 }
 
 function draw() {
-  background("plum")
-  //background(value);
+  background(value);
   image(clouds, width/2,100, 500, 300)
   fill(255 - value);
   textSize(150 - value);
