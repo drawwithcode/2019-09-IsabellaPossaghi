@@ -1,5 +1,5 @@
 var value = 0;
-var value2 = 50;
+
 
 
 //ball
@@ -35,7 +35,7 @@ function draw() {
   image(clouds, width / 2, 100, 800, 600)
   image(tree, width / 2, 1100, windowWidth, 800)
 
-  background(230, 240, 255, 255 - value2 / 2);
+  background(230, 240, 255, 255 - value / 5);
 
   //fill(0 + value);
   //textSize(150 - value);
@@ -74,6 +74,15 @@ function draw() {
   } else {
     image(snow_3, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
   }
+
+  //vediamo se funziona
+  if (cy > windowHeight || cy < 0) {
+      pulse = -pulse;
+    }
+
+    if (cx < 0 || cx > windowWidth) {
+      pulse = -pulse;
+    }
 
 
 
