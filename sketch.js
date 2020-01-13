@@ -1,4 +1,5 @@
 var value = 0;
+var value2 = 50;
 
 
 //ball
@@ -32,7 +33,7 @@ function draw() {
   //background images
   image(clouds, width / 2, 100, 800, 600)
   image(tree, width / 2, 1100, windowWidth, 800)
-  background(230, 240, 255, 255 - value / 2);
+  background(230, 240, 255, 255 - value2 / 2);
 
   //fill(0 + value);
   //textSize(150 - value);
@@ -82,6 +83,7 @@ function deviceShaken() {
   }
 }
 
+//permission
 function touchEnded(event) {
   DeviceOrientationEvent.requestPermission()
 }
