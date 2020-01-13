@@ -6,7 +6,7 @@ let cx, cy
 
 function preload() {
   snow_1 = loadImage("./assets/snow_1.png");
-  snow_2 = loadImage("./assets/snow_2.png");
+  snow_3 = loadImage("./assets/snow_3.png");
   clouds = loadImage("./assets/clouds.png");
   tree = loadImage("./assets/tree.png")
   deer = loadImage("./assets/deer.png")
@@ -76,7 +76,7 @@ function draw() {
 
     fill(50, 250, 70)
     //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
-    image(snow_2, cx, cy, 20 + abs(rotationX*5) + pulse, 20 + abs(rotationX*5) + pulse)
+    image(snow_3, cx, cy, 20 + abs(rotationX*5) + pulse, 20 + abs(rotationX*5) + pulse)
 
   }
 }
