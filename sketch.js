@@ -32,7 +32,7 @@ function draw() {
   //background images
   image(clouds, width/2,100, 800, 600)
   image(tree,width/2, 1100, windowWidth, 800 )
-  background(255, 255-value);
+  background(255, 255-value/2);
 
   fill(255 - value);
   //textSize(150 - value);
