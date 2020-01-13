@@ -31,7 +31,7 @@ function draw() {
 
   //background images
   image(clouds, width/2,100, 800, 600)
-  image(tree,width/2, 1030, windowWidth, 800 )
+  image(tree,width/2, 1100, windowWidth, 800 )
   background(255, 255-value);
 
   fill(255 - value);
@@ -55,7 +55,7 @@ function draw() {
 
 
   for (var i = 0; i < touches.length; i++) {
-   // One color per finger
+
    //fill(colors[i]);
    //rect(touches[i].x, touches[i].y, 100, 100);
    image(deer,touches[i].x, touches[i].y, 100, 100)
@@ -68,13 +68,13 @@ function draw() {
     fill(50, 250, 70)
     noStroke()
     //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse) //with abs() the number is always positive
-    image(snow_1, cx, cy, 150 + abs(rotationX*5) + pulse, 150 + abs(rotationX*5) + pulse)
+    image(snow_1, cx, cy, 20 + abs(rotationX*5) + pulse, 20 + abs(rotationX*5) + pulse)
 
   } else {
 
     fill(50, 250, 70)
     //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
-    image(snow_2, cx, cy, 150 + abs(rotationX*5) + pulse, 150 + abs(rotationX*5) + pulse)
+    image(snow_2, cx, cy, 20 + abs(rotationX*5) + pulse, 20 + abs(rotationX*5) + pulse)
 
   }
 }
