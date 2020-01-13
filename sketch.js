@@ -4,6 +4,11 @@ var colors = ["#bcbbe5", "#467f16", "#e776b5", "#85ddce", "#efb865"]
 //ball
 let cx, cy
 
+function preolad() {
+  snow_1 = loadImage("./assets/snow_1.png");
+  snow_2 = loadImage("./assets/snow_2.png");
+}
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
   angleMode(DEGREES);
@@ -48,14 +53,16 @@ function draw() {
   if (touches.length==0) {
     fill(50, 250, 70)
     noStroke()
-    ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse) //with abs() the number is always positive
+    //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse) //with abs() the number is always positive
+    image(snow_1, cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
 
   } else {
     background("plum")
     fill(50, 250, 70)
     strokeWeight(8)
     stroke("peachpuff")
-    ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
+    //ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
+    image(snow_2, cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
   }
 }
 
