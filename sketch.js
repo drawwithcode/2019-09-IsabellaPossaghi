@@ -8,8 +8,7 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   angleMode(DEGREES);
 
-  // by defaults equals to 30
-  setShakeThreshold(10);
+  setShakeThreshold(20); // by defaults equals to 30, a little more sensitive
   frameRate(12);
 
   //ball
@@ -18,11 +17,13 @@ function setup() {
 }
 
 function draw() {
+
   background(value);
-  fill("plum" - value); //fill(255 - value);
-  textSize(90);
+  fill(255 - value);
+  textSize(150 - value);
   textAlign(CENTER);
-  text(value,width/2,height/2+30)
+  //text(value,width/2,height/2+30)
+  text("a lucky snowflake", width/2,height/2+30)
 
   //ball
   cx += map(rotationY, -90, 90, -100, 100)
@@ -48,13 +49,9 @@ function draw() {
     fill(50, 250, 70)
     noStroke()
     ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse) //with abs() the number is always positive
-    //experiment
-    if (rotationX > 30) {
-      rect(cx, cy, 20, 20)
-    } else {
-    ellipse(cx, cy, 50 + abs(rotationX*5) + pulse, 50 + abs(rotationX*5) + pulse)
-    }
+
   } else {
+    background("plum")
     fill(50, 250, 70)
     strokeWeight(8)
     stroke("peachpuff")
