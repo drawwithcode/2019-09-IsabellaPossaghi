@@ -26,11 +26,12 @@ function setup() {
 }
 
 function draw() {
-  background(value);
+  background("plum")
+  //background(value);
   image(clouds, width/2,100, 500, 300)
   fill(255 - value);
-  //textSize(150 - value);
-  textSize(50);
+  textSize(150 - value);
+  //textSize(50);
   textAlign(CENTER);
   //text(value,width/2,height/2+30)
   text("a lucky snowflake", width/2,height/2+30)
