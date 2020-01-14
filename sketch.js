@@ -78,22 +78,24 @@ function draw() {
 }
 
 
-function deviceShaken() {
-  value = value + 1;
-  if (value > 255) {
-    value = 0;
-  }
-}
+// function deviceShaken() {
+//   value = value + 1;
+//   if (value > 255) {
+//     value = 0;
+//   }
+// }
 
 //permission
 function touchEnded(event) {
   DeviceOrientationEvent.requestPermission()
 }
 
+//value increases when the device is moved
 function deviceMoved() {
   value++
 }
 
+//fixed screen when you touch it
 function touchMoved() {
   return false;
 }
