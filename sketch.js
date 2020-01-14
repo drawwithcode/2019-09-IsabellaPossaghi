@@ -29,7 +29,7 @@ function draw() {
   image(tree, width / 2, 1100, windowWidth, 800)
 
   //try to obtain a "fading background"
-  background(230, 240, 255, 255 - (value / 5)+15);
+  background(230, 240, 255, 255 - (value / 5) + 15);
 
   //text
   fill(120, value, 205, 255)
