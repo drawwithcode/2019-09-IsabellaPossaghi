@@ -43,10 +43,12 @@ function draw() {
   //snowflake position that changes when the device is turned
   cx += map(rotationY, -90, 90, -100, 100);
   cy += map(rotationX, -90, 90, -100, 100);
-  // if (cx >= width) cx = 0;
-  // else if (cx <= 0) cx = width;
-  // if (cy >= height) cy = 0;
-  // else if (cy <= 0) cy = height;
+
+  //lets the snowflake be able to "re-appear" when it goes over the screen limits
+  if (cx >= width) cx = 0;
+  else if (cx <= 0) cx = width;
+  if (cy >= height) cy = 0;
+  else if (cy <= 0) cy = height;
 
 
   let pulse = sin(frameCount / 20) * 50;
