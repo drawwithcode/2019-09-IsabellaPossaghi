@@ -1,8 +1,4 @@
-var value = 0;
-
-
-
-//ball
+var value = 0; //value starting point
 let cx, cy
 
 function preload() {
@@ -24,9 +20,6 @@ function setup() {
   //snowflake position
   cx = width / 2
   cy = height / 2
-
-
-
 }
 
 function draw() {
@@ -35,10 +28,11 @@ function draw() {
   image(clouds, width / 2, 100, 800, 600)
   image(tree, width / 2, 1100, windowWidth, 800)
 
+  //try to obtain a "fading background"
   background(230, 240, 255, 255 - (value / 5)+15);
 
   //text
-  fill(230, value, 255, 255)
+  fill(120, value, 205, 255)
   textSize(50);
   textAlign(CENTER);
   textFont("VT323");
@@ -46,16 +40,16 @@ function draw() {
   text("tap to make a reindeer appear", width / 2, 140)
 
 
-  //snowflake position
-  cx += map(rotationY, -90, 90, -100, 100)
-  cy += map(rotationX, -90, 90, -100, 100)
-  if (cx >= width) cx = 0
-  else if (cx <= 0) cx = width
-  if (cy >= height) cy = 0
-  else if (cy <= 0) cy = height
+  //snowflake position that changes when the device is turned
+  cx += map(rotationY, -90, 90, -100, 100);
+  cy += map(rotationX, -90, 90, -100, 100);
+  // if (cx >= width) cx = 0;
+  // else if (cx <= 0) cx = width;
+  // if (cy >= height) cy = 0;
+  // else if (cy <= 0) cy = height;
 
 
-  let pulse = sin(frameCount / 20) * 50
+  let pulse = sin(frameCount / 20) * 50;
 
   // a reindeer appears when you touch the screen
   for (var i = 0; i < touches.length; i++) {
@@ -63,11 +57,10 @@ function draw() {
   }
 
 
-
-
   // the snowflake changes when you touch the screen
   if (touches.length == 0) {
     //with abs() the number is always positive
+    //the snowflake becomes bigger when you rotate the device is rotated around x axis
     image(snow_1, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
   } else {
     image(snow_3, cx, cy, 20 + abs(rotationX * 5) + pulse, 20 + abs(rotationX * 5) + pulse)
@@ -75,13 +68,13 @@ function draw() {
 
 }
 
-
-// function deviceShaken() {
-//   value = value + 1;
-//   if (value > 255) {
-//     value = 0;
-//   }
-// }
+//when the values reaches 255, it returns to 0
+function deviceShaken() {
+  value = value + 1;
+  if (value > 255) {
+    value = 0;
+  }
+}
 
 //permission
 function touchEnded(event) {
