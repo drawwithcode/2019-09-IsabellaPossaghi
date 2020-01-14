@@ -21,7 +21,7 @@ function setup() {
   setShakeThreshold(40); // by defaults equals to 30, a little more sensitive
   frameRate(12);
 
-  //ball
+  //snowflake position
   cx = width / 2
   cy = height / 2
 
@@ -35,14 +35,12 @@ function draw() {
   image(clouds, width / 2, 100, 800, 600)
   image(tree, width / 2, 1100, windowWidth, 800)
 
-  background(230, 240, 255, 255 - value / 5);
+  background(230, 240, 255, 255 - (value / 5)+15);
 
-  //fill(0 + value);
-  //textSize(150 - value);
+  //text
   fill(230, value, 255, 255)
   textSize(50);
   textAlign(CENTER);
-  //text(value,width/2,height/2+30)
   textFont("VT323");
   text("move your device to control the snowflake", width / 2, 100)
   text("tap to make a reindeer appear", width / 2, 140)
